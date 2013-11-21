@@ -1,0 +1,21 @@
+{
+"jsLibs": [
+		"app/lib/jquery/jquery-1.10.2.min.js",
+		"app/js/bootstrap.min.js",
+		"app/lib/jquery/fullcalendar.js",
+		"app/lib/jquery/gcal.js",
+		"app/lib/angular/angular.js",
+		"app/lib/angular/ui-bootstrap-tpls-0.4.0.js",
+		"app/lib/angular/localStorageModule.js",
+		"app/js/coffe_results.js",
+		"app/js/s-expr-log.js"
+		],
+"cssLibs" : [
+		"app/css/bootplus.min.css",
+		"app/css/bootplus-responsive.min.css",
+		"app/css/font-awesome.min.css",
+		"app/css/app.css",
+		"app/css/content.css",
+		"app/css/fullcalendar.css"
+		]
+}
