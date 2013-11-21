@@ -47,6 +47,7 @@
 		'NarpApp.controllers.about',
 		'NarpApp.controllers.contact',
 		'NarpApp.controllers.login',
+		'NarpApp.controllers.myFriends',
 		//Extras
 		'ui.bootstrap',
 		'LocalStorageModule'
@@ -64,7 +65,11 @@
 		});
 		$routeProvider.when('/contact', {
 			templateUrl : 'partials/contact.html',
-			controller : 'contactCtrl'
+			controller : 'ContactCtrl'
+		});
+		$routeProvider.when('/myFriends', {
+			templateUrl : 'partials/myFriends.html',
+			controller : 'MyFriendsCtrl'
 		});
 
 		return $routeProvider.otherwise({

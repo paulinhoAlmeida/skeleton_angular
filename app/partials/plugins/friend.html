@@ -1,0 +1,18 @@
+<div class="span3" ng-repeat="friend in myFriends">
+	<div class="card people">
+		<div class="card-top green">
+			<a href="#"> <img bn-lazy-src="{{friend.img}}" width="170px" height="150px" alt=""/> </a>
+		</div>
+		<div class="card-info">
+			<a class="title" href="#">{{friend.name}}</a>
+			<div class="desc">
+				{{friend.desc}}
+			</div>
+		</div>
+		<div class="card-bottom">
+			<button class="btn btn-block" ng-click="clickToSee(friend.id)">
+				Follow
+			</button>
+		</div>
+	</div>
+</div>

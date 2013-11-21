@@ -1,11 +1,28 @@
 (function() {
-	var app = angular.module('NarpApp.controllers.contact', []);
-	app.controller('ContactCtrl', ['$scope', '$location', '$routeParams', 'steam', 'ModalFullpageService',
+	var app = angular.module('NarpApp.controllers.myFriends', []);
+	app.controller('MyFriendsCtrl', ['$scope', '$location', '$routeParams', 'steam', 'ModalFullpageService',
 	function($scope, loc, rp, steam, modalFullpageService) {
+
+
+
+		// This sample assumes a client object has been created.
+		// To learn more about creating a client, check out the starter:
+		//  https://developers.google.com/+/quickstart/javascript
+		var request = gapi.client.plus.people.list({
+			'userId' : 'paulo.cc03@gmail.com',
+			'collection' : 'visible'
+		});
+	
+		request.execute(function(resp) {
+			var numItems = resp.items.length;
+			for (var i = 0; i < numItems; i++) {
+				console.log(resp.items[i].displayName);
+			}
+		}); 
+
 
 		$scope.myFriends = myFriends;
 
-		$scope.myGroups = myGroups;
 
 		$scope.clickToSee = function(id){
 			return modalFullpageService.open(id);
@@ -13,25 +30,6 @@
 
 
 	}]);
-
-	var myGroups = [
-	{
-		name: 'My Groups',
-		img : 'img/the-simpsons.png',
-		avatar : 'img/avatar_homer.png',
-		desc : [
-			{
-				desc : 'Lorem ipsum'
-			},
-			{
-				desc : 'Lorem ipsum'
-			},
-			{
-				desc : 'Lorem ipsum'
-			},
-		] 
-	}
-	];
 
 
 	var myFriends = [{

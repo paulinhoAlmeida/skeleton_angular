@@ -12,8 +12,8 @@
 		}
 
 		return $scope.actions = [{
-			name : 'Action',
-			url : '#'
+			name : 'Google Friends',
+			url : '#/myFriends'
 		}, {
 			name : 'Another action',
 			url : '#'
