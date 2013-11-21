@@ -1,7 +1,6 @@
 (function() {
-	var services;
 
-	services = angular.module('NarpApp.services', []);
+	var services = angular.module('NarpApp.services.backend', []);
 
 	services.value('version', '0.1');
 

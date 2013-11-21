@@ -6,6 +6,7 @@
 
 		this.open = function(id) {
 
+			console.log('Id for detail: ',id);
 			dialogOptions = {
 				title : 'my test title....'
 			}
