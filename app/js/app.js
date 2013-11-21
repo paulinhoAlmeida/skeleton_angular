@@ -30,16 +30,24 @@
 
 	app = angular.module('NarpApp', 
 		[
-		'NarpApp.filters',
-		'NarpApp.services',
-		'NarpApp.directives',
+		//Services
+		'NarpApp.services.backend',
+		'NarpApp.services.modal_fullpage',
+		//Filters
+		'NarpApp.filters.interpolate',
+		//Directives
+		'NarpApp.directives.version',
+		'NarpApp.directives.draggable',
+		'NarpApp.directives.droppable',
+		'NarpApp.directives.lazy-loading-img',
+		//Controllers
 		'NarpApp.controllers.global',
 		'NarpApp.controllers.menu',
 		'NarpApp.controllers.home',
 		'NarpApp.controllers.about',
 		'NarpApp.controllers.contact',
 		'NarpApp.controllers.login',
-		'NarpApp.directives.lazy-loading-img',
+		//Extras
 		'ui.bootstrap',
 		'LocalStorageModule'
 		]);

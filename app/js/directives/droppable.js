@@ -27,25 +27,7 @@
 (function() {
 	var directives;
 
-	directives = angular.module('NarpApp.directives', []);
-
-	directives.directive('appVersion', ['version',
-	function(version) {
-		return function(scope, elm, attrs) {
-			return elm.text(version);
-		};
-	}]);
-
-	directives.directive('draggable', function() {
-		return {
-			restrict : 'A',
-			link : function(scope, elm, attrs) {
-				return elm.draggable({
-					revert : true
-				});
-			}
-		};
-	});
+	directives = angular.module('NarpApp.directives.droppable', []);
 
 	directives.directive('droppable', function($compile) {
 		return {
