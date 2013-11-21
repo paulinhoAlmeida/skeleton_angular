@@ -24,7 +24,6 @@
  # 		anything else that can help me understand this file overall?
  #
  */
-
 (function() {
 	var directives;
 
