@@ -37,12 +37,12 @@
 						</ul>
 					</li>
 				</ul>
-				<div class="navbar-form pull-right" ng-hide="isLooged == 'guest'">
-					<button type="submit" class="btn btn-danger" ng-click="logout">
+				<div class="navbar-form pull-right" ng-hide="isLogged() == 'guest'">
+					<button type="submit" class="btn btn-danger" ng-click="logout()">
 						LogOut
 					</button>
 				</div>
-				<div id="signinButton" class="navbar-form pull-right" ng-show="isLooged == 'guest'">
+				<div id="signinButton" class="navbar-form pull-right" ng-show="isLogged == 'guest'">
 					<span
 					class="g-signin"
 					data-callback="init"
@@ -51,7 +51,7 @@
 					data-requestvisibleactions="http://schemas.google.com/AddActivity"
 					data-scope="https://www.googleapis.com/auth/plus.login"> </span>
 				</div>
-				<form class="navbar-form pull-right" ng-show="isLooged == 'guest'">
+				<form class="navbar-form pull-right" ng-show="isLogged() == 'guest'">
 					<button id="ourSignIn" type="submit" class="btn btn-primary"  ng-click="login">
 						Sign in
 					</button>

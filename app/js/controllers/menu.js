@@ -42,11 +42,12 @@
 						// "access_denied" - User denied access to your app
 						// "immediate_failed" - Could not automatically log in
 						// the user
+						$('#signinButton').show();
 						console.log('Sign-in state: ' + authResult['error']);
 					}
 				};
 				
-				$scope.isLooged = function(){
+				$scope.isLogged = function(){
 					return steam.isUserLooged();
 				}
 
@@ -57,6 +58,7 @@
 				$scope.logout = function(){
 					console.log('lets logout the user.');
 					gapi.auth.signOut();
+					steam.removeUserLocal();
 				}
 				
 			} ]);

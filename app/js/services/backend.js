@@ -13,12 +13,19 @@
 		};
 		isUserLooged = function() {
 			var logindata = JSON.parse(localStorageService.get('logindata'));
-			return !!logindata ? logindata : 'guest';
+			console.log('Login data: ',logindata);
+			return !!logindata? logindata : 'guest';
 		};
+		removeUserLocal = function(){
+			var logindata = JSON.parse(localStorageService.get('logindata'));
+			console.log('Login data: ',logindata);
+			localStorageService.remove('logindata');
+		}
 		
 		return {
 			saveUserLocal :saveUserLocal,
-			isUserLooged : isUserLooged
+			isUserLooged : isUserLooged,
+			removeUserLocal : removeUserLocal
 		};
 	});
 
