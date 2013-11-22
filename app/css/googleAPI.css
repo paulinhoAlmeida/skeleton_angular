@@ -1,0 +1,44 @@
+#ourSignIn{
+	height: 31px;
+	font-family: Roboto, arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#signinButton{
+	margin-top: 7px;
+}
+
+#signinButton button {
+	display: inline-block;
+	background: #dd4b39;
+	color: white;
+	width: 165px;
+	border-radius: 5px;
+	white-space: nowrap;
+	height: 27px !important;
+}
+#signinButton button:hover {
+	background: #e74b37;
+	cursor: hand;
+}
+#signinButton span.label {
+	font-weight: bold;
+}
+#signinButton span.icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 35px;
+	height: 35px;
+	border-right: #bb3f30 1px solid;
+}
+#signinButton span.buttonText {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: 43px;
+	font-weight: bold;
+	/* Use the Roboto font that is loaded in the <head> */
+	font-family: 'Roboto', arial, sans-serif;
+}

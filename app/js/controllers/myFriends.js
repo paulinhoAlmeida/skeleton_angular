@@ -6,34 +6,6 @@
 		$scope.getAllMyFriendsFromGoogle = function(){
 			 var apiKey = 'AI39si7PakgVqFaZhz6ZFCOQYbE206epm1BwaKPO6Vzz7K3pGnaIj18xFf7v1YJ8wn4fDPbnoaq5n5DKa3YoAkL6gdp8a2rKxQ';
 
-			// gapi.client.setApiKey(apiKey);
-			// gapi.client.load('urlshortener', 'v1', makeRequest);
-			// function makeRequest() {
-				// function writeResponse(resp) {
-					// var responseText;
-					// if (resp.code && resp.data[0].debugInfo == 'QuotaState: BLOCKED') {
-						// responseText = 'Invalid API key provided. Please replace the "apiKey" value with your own.';
-					// } else {
-						// responseText = 'Short URL ' + shortUrl + ' expands to ' + resp.longUrl;
-					// }
-// 					
-					// console.log('Data from Google: ',responseText);
-				// }
-// 			
-				// var shortUrl = 'https://www.googleapis.com/plus/v1/people/paulo.cc03@gmail.com';
-				// var request = gapi.client.urlshortener.url.get({
-					// 'shortUrl' : shortUrl
-				// });
-				// request.execute(writeResponse);
-			// }
-// 
-// 			
-
-			// $.get('https://www.googleapis.com/plus/v1/people/paulo.cc03@gmail.com',
-			// function(data){
-				// console.log('Data from Google: ',data);
-			// });
-
 			var xhReq = new XMLHttpRequest();
 			xhReq.open("GET", "https://www.googleapis.com/plus/v1/activities/z12gtjhq3qn2xxl2o224exwiqruvtda0i?key="+apiKey, false);
 			xhReq.send(null);

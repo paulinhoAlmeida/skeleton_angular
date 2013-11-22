@@ -1,9 +1,8 @@
 (function() {
-
-	var myAppModule = angular.module('NarpApp.services.modal_fullpage', ['ui.bootstrap']);
-	myAppModule.service('ModalFullpageService', ['$dialog', 'steam',
-	function($dialog, steam) {
-
+	var app = angular.module('NarpApp.services.login', []);
+	app.service('LoginService', ['$dialog', 'steam',
+ 	function($dialog, steam) {
+		
 		this.open = function(id) {
 
 			console.log('Id for detail: ',id);
@@ -16,7 +15,7 @@
 				keyboard : true,
 				backdropClick : true,
 				dialogFade : true,
-				templateUrl : 'partials/services/modal_fullpage.html',
+				templateUrl : 'partials/services/login.html',
 				dialogClass : 'modal fullPage'
 			};
 
@@ -32,5 +31,4 @@
 		};
 
 	}]);
-
 }).call(this);

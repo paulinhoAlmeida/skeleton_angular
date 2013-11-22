@@ -5,13 +5,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
-		<title>Touche</title>
+		<title>Skeleton</title>
 
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700" rel="stylesheet" type="text/css">
 
 		<link rel="stylesheet" href="css/bootplus.min.css">
 		<link rel="stylesheet" href="css/app.css">
 		<link rel="stylesheet" href="css/bootplus-responsive.min.css">
+		<link rel="stylesheet" href="css/googleAPI.css">
 
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,6 +41,7 @@
 		<!-- Services -->
 		<script src="js/services/backend.js"></script>
 		<script src="js/services/modal_fullpage.js"></script>
+		<script src="js/services/login.js"></script>
 		<!-- Filters -->
 		<script src="js/filters/interpolate.js"></script>
 		<!-- Directives -->
@@ -50,13 +52,20 @@
 		<!-- Controllers -->
 		<script src="js/controllers/global.js"></script>
 		<script src="js/controllers/menu.js"></script>
-		<script src="js/controllers/login.js"></script>
 		<script src="js/controllers/home.js"></script>
 		<script src="js/controllers/about.js"></script>
 		<script src="js/controllers/contact.js"></script>
 		<script src="js/controllers/myFriends.js"></script>
 		<script src="js/controllers/guestBook.js"></script>
 
-		<script src="https://apis.google.com/js/client.js?onload=onLoadGoogleApi"></script>
+
+		<!-- Place this asynchronous JavaScript just before your </body> tag -->
+	    <script type="text/javascript">
+	      (function() {
+	       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	       po.src = 'https://apis.google.com/js/client:plusone.js';
+	       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	     })();
+	    </script>
 	</body>
 </html>

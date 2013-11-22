@@ -33,6 +33,7 @@
 		//Services
 		'NarpApp.services.backend',
 		'NarpApp.services.modal_fullpage',
+		'NarpApp.services.login',
 		//Filters
 		'NarpApp.filters.interpolate',
 		//Directives
@@ -46,7 +47,6 @@
 		'NarpApp.controllers.home',
 		'NarpApp.controllers.about',
 		'NarpApp.controllers.contact',
-		'NarpApp.controllers.login',
 		'NarpApp.controllers.myFriends',
 		'NarpApp.controllers.guestBook',
 		//Extras
@@ -72,8 +72,8 @@
 			templateUrl : 'partials/myFriends.html',
 			controller : 'MyFriendsCtrl'
 		});
-		$routeProvider.when('/guessBook', {
-			templateUrl : 'partials/guessBook.html',
+		$routeProvider.when('/guestBook', {
+			templateUrl : 'partials/guestBook.html',
 			controller : 'GuestBookCtrl'
 		});
 		
@@ -81,5 +81,7 @@
 			redirectTo : '/home'
 		});
 	}]);
+	
+
 
 }).call(this);
