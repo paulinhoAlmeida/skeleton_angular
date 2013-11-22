@@ -34,6 +34,7 @@
 						// Hide the sign-in button now that the user is
 						// authorized, for example:
 						steam.saveUserLocal(authResult);
+						$scope.isLogged = steam.isUserLooged();
 					} else if (authResult['error']) {
 						// Update the app to reflect a signed out user
 						// Possible error values:
@@ -42,13 +43,12 @@
 						// "immediate_failed" - Could not automatically log in
 						// the user
 						steam.removeUserLocal();
+						$scope.isLogged = steam.isUserLooged();
 						console.log('Sign-in state: ' + authResult['error']);
 					}
 				};
 				
-				$scope.isLogged = function(){
-					return steam.isUserLooged();
-				}
+				$scope.isLogged = steam.isUserLooged();
 
 				$scope.login = function(){
 					loginService.open();
