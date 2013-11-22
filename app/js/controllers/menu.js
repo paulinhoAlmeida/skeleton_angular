@@ -43,6 +43,7 @@
 						// "immediate_failed" - Could not automatically log in
 						// the user
 						$('#signinButton').show();
+						steam.removeUserLocal();
 						console.log('Sign-in state: ' + authResult['error']);
 					}
 				};
