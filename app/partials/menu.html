@@ -42,7 +42,7 @@
 						LogOut
 					</button>
 				</div>
-				<div id="signinButton" class="navbar-form pull-right" ng-show="isLogged == 'guest'">
+				<div id="signinButton" class="navbar-form pull-right" ng-show="isLogged() == 'guest'">
 					<span
 					class="g-signin"
 					data-callback="init"
@@ -66,7 +66,5 @@
 			var $scope = angular.element(ele).scope();
 			$scope.signinCallback(data);
 		}
-		
-
 	</script>
 </div>

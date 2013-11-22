@@ -13,7 +13,6 @@
 		};
 		isUserLooged = function() {
 			var logindata = JSON.parse(localStorageService.get('logindata'));
-			console.log('Login data: ',logindata);
 			return !!logindata? logindata : 'guest';
 		};
 		removeUserLocal = function(){

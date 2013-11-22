@@ -33,7 +33,6 @@
 						// Update the app to reflect a signed in user
 						// Hide the sign-in button now that the user is
 						// authorized, for example:
-						$('#signinButton').hide();
 						steam.saveUserLocal(authResult);
 					} else if (authResult['error']) {
 						// Update the app to reflect a signed out user
@@ -42,7 +41,6 @@
 						// "access_denied" - User denied access to your app
 						// "immediate_failed" - Could not automatically log in
 						// the user
-						$('#signinButton').show();
 						steam.removeUserLocal();
 						console.log('Sign-in state: ' + authResult['error']);
 					}
@@ -60,6 +58,7 @@
 					console.log('lets logout the user.');
 					gapi.auth.signOut();
 					steam.removeUserLocal();
+					$scope.isLogged = steam.isUserLooged();
 				}
 				
 			} ]);
