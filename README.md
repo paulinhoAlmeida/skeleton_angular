@@ -1,11 +1,14 @@
-# Customizations
+#AngularJs with Google Cloud Endpoint
+AngularJs with Google Cloud integration using push notifications
+https://cloud.google.com/resources/articles/angularjs-cloud-endpoints-recipe-for-building-modern-web-applications
+
+### Customizations
 
 `scripts/server.coffee` is a node+express webserver:
 
 
 app/ is the docroot from which the website is served
     http://localhost:8000/page.html <-- src/page.jade
-    http://localhost:8000/partial/page.html <-- src/dir/page.jade
     http://localhost:8000/partial/js/code.js <-- src/js/code.coffee
 
 Usage:
@@ -20,7 +23,7 @@ For E2E testing under the `http://localhost:8000/test/e2e/runner.html` url, the 
 TODO: compile script for deployment
 
 
-# angular-seed — the seed for AngularJS apps
+### angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
@@ -40,6 +43,8 @@ webserver during development to avoid issues with security restrictions (sandbox
 sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
 etc to function properly when an html page is opened via `file://` scheme instead of `http://`._
 
+
+### Google Cloud Endpoint
 
 ### Running unit tests
 

@@ -48,6 +48,7 @@
 		'NarpApp.controllers.contact',
 		'NarpApp.controllers.login',
 		'NarpApp.controllers.myFriends',
+		'NarpApp.controllers.guestBook',
 		//Extras
 		'ui.bootstrap',
 		'LocalStorageModule'
@@ -71,7 +72,11 @@
 			templateUrl : 'partials/myFriends.html',
 			controller : 'MyFriendsCtrl'
 		});
-
+		$routeProvider.when('/guessBook', {
+			templateUrl : 'partials/guessBook.html',
+			controller : 'GuestBookCtrl'
+		});
+		
 		return $routeProvider.otherwise({
 			redirectTo : '/home'
 		});

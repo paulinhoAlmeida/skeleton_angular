@@ -1,0 +1,14 @@
+<div ng-controller="GuestbookCtrl" class="container" ng-show="is_backend_ready">
+	<h2>Guestbook</h2>
+	<form ng-submit="insert()">
+		<input type="text" ng-model="createdBy" size="50">
+		<br>
+		<input type="text" ng-model="content" size="50">
+		<br>
+		<input type="submit" class="btn" value="Post">
+	</form>
+	<ul>
+		<li ng-repeat="message in messages">
+			{{message.createdAt|date:'short'}} {{message.createdBy}}: {{message.content}}
+	</ul>
+</div>

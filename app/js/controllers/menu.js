@@ -15,8 +15,8 @@
 			name : 'Google Friends',
 			url : '#/myFriends'
 		}, {
-			name : 'Another action',
-			url : '#'
+			name : 'Guess Book',
+			url : '#/guessBook'
 		}, {
 			name : 'Something else here',
 			url : '#'
