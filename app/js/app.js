@@ -51,12 +51,14 @@
 		'NarpApp.controllers.guestBook',
 		//Extras
 		'ui.bootstrap',
-		'LocalStorageModule'
+		'LocalStorageModule',
+		'ngRoute'
 		]);
 
-	app.config(['$routeProvider',
-	function($routeProvider) {
-		$routeProvider.when('/home', {
+	app.config([
+        '$routeProvider', function($routeProvider) {
+
+        $routeProvider.when('/home', {
 			templateUrl : 'partials/home.html',
 			controller : 'HomeCtrl'
 		});
