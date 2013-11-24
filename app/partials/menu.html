@@ -37,21 +37,22 @@
 						</ul>
 					</li>
 				</ul>
-				<div class="navbar-form pull-right" ng-hide="{{isLogged}} == guest">
+				<div class="navbar-form pull-right" ng-show="{{isLogged}}">
 					<button type="submit" class="btn btn-danger" ng-click="logout()">
 						LogOut
 					</button>
+					
 				</div>
-				<div id="signinButton" class="navbar-form pull-right" ng-show="{{isLogged}} == guest">
+				<div id="signinButton" 	class="navbar-form pull-right" ng-hide="{{isLogged}}">
 					<span
 					class="g-signin"
-					data-callback="init"
+					data-callback="initGoogleCallback"
 					data-clientid="588439795012-aqjab2qffma45q6tgen55pgjtslqlm1k.apps.googleusercontent.com"
 					data-cookiepolicy="single_host_origin"
 					data-requestvisibleactions="http://schemas.google.com/AddActivity"
 					data-scope="https://www.googleapis.com/auth/plus.login"> </span>
 				</div>
-				<form class="navbar-form pull-right" ng-show="{{isLogged}} == guest">
+				<form 					class="navbar-form pull-right" ng-hide="{{isLogged}}">
 					<button id="ourSignIn" type="submit" class="btn btn-primary"  ng-click="login()">
 						Sign in
 					</button>
@@ -60,11 +61,5 @@
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
-	<script type="text/javascript">
-		function init(data) {
-			var ele = $('[ng-controller="MenuCtrl"]')[0];
-			var $scope = angular.element(ele).scope();
-			$scope.signinCallback(data);
-		}
-	</script>
+	
 </div>

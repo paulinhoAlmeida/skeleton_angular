@@ -27,5 +27,5 @@ app.configure 'production', ->
 	app.use express.errorHandler()
 
 if !module.parent
-	app.listen port = 8000
+	app.listen port = 8001
 	console.log 'Listening on port ' + port

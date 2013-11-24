@@ -18,7 +18,6 @@
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-
 	</head>
 	<body ng-controller="AppCtrl">
 		<div ng-include="'partials/menu.html'" class="header"></div>
@@ -30,7 +29,15 @@
 			<div ng-include="'partials/footer.html'" class="header"></div>
 		</footer>
 
-
+	<!-- Script to assist initial login from google-->
+	<script type="text/javascript">
+		console.log('Hey init Google Callback...');
+		function initGoogleCallback(data) {
+			var ele = $('[ng-controller="MenuCtrl"]')[0];
+			var $scope = angular.element(ele).scope();
+			$scope.signinCallback(data);
+		}
+	</script>
 		<!-- Other JavaScripts -->
 		<script src="lib/jquery/jquery-1.10.2.min.js"></script>
 		<script src="lib/angular/angular.js"></script>
@@ -59,8 +66,6 @@
 		<script src="js/controllers/contact.js"></script>
 		<script src="js/controllers/myFriends.js"></script>
 		<script src="js/controllers/guestBook.js"></script>
-
-
 		<!-- Place this asynchronous JavaScript just before your </body> tag -->
 	    <script type="text/javascript">
 	      (function() {
