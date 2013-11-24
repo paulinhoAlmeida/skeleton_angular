@@ -29,8 +29,7 @@
 				// Hide the sign-in button now that the user is
 				// authorized, for example:
 				steam.saveUserLocal(authResult);
-				$scope.isLogged = true;
-				$scope.$digest();
+				//$rootScope.$digest();
 
 			} else if (authResult['error']) {
 				console.log('Sign-in state: ' + authResult['error']);
@@ -41,27 +40,29 @@
 				// "immediate_failed" - Could not automatically log in
 				// the user
 				steam.removeUserLocal();
-				$scope.isLogged = false;
-				$scope.$digest();
+				//$rootScope.$digest();
 
 			}
 		};
 
-		$scope.isLogged = false;
+//		$scope.isLogged = false;
+		$scope.isLogged = function(){
+			var user = steam.isUserLooged();
+			console.log('User on local storage: ',user);
+			return user;
+		}
 
 		$scope.login = function(){
 			loginService.open();
 			steam.saveUserLocal(authResult);
-			$scope.isLogged = true;
-			$scope.$digest();
+			//$rootScope.$digest();
 		}
 
 		$scope.logout = function(){
 			console.log('lets logout the user.');
 			gapi.auth.signOut();
 			steam.removeUserLocal();
-			$scope.isLogged = false;
-			$scope.$digest();
+			//$rootScope.$digest();
 		}
 
 	} ]);
