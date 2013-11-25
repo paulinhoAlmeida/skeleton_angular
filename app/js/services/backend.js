@@ -7,18 +7,19 @@
 	services.factory('steam', function($http, localStorageService) {
 		
 		saveUserLocal = function(response) {
-			localStorageService.add('logindata', JSON.stringify(response));
-			console.log("backend-save", response);
-			return response.data;
+			var saved = localStorageService.add('logindata', JSON.stringify(response));
+			//console.log("Login data on save", saved);
+			return saved;
 		};
 		isUserLooged = function() {
 			var logindata = JSON.parse(localStorageService.get('logindata'));
-			return !!logindata? logindata : 'guest';
+			//console.log('Login data on query: ',logindata);
+			return !!logindata ? true : false;
 		};
 		removeUserLocal = function(){
-			var logindata = JSON.parse(localStorageService.get('logindata'));
-			console.log('Login data: ',logindata);
 			localStorageService.remove('logindata');
+			var logindata = JSON.parse(localStorageService.get('logindata'));
+			//console.log('Login data afte remove: ',logindata);
 		}
 		
 		return {

@@ -1,0 +1,29 @@
+<div id='gdriveContainer' class='container' data-ng-controller="GdriveCtrl">
+
+	<div id="dropper">
+		<div class="dropzone"><img src="img/gdrive/upload.svg">
+		</div>
+	</div>
+
+	<section id="main">
+		<nav>
+			<h2>Google Drive Uploader</h2>
+			<button id="authorize-button" class="btn" data-ng-click="toggleAuth(true)">
+				{{authButtonLabel()}}
+			</button>
+			<button class="btn" data-ng-click="fetchDocs(false)">
+				Refresh
+			</button>
+		</nav>
+
+		<progress></progress>
+		<ul>
+			<li data-ng-repeat="doc in docs">
+				<!-- crbug.com/120693. Anchors need target="_blank", but <base> is taking care of this for us :) -->
+				<img data-ng-src="{{doc.icon}}">
+				<a href="{{doc.alternateLink}}">{{doc.title}}</a> {{doc.size}}
+				<span class="date">{{doc.updatedDate}}</span>
+			</li>
+		</ul>
+	</section>
+</div>

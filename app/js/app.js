@@ -49,10 +49,12 @@
 		'NarpApp.controllers.contact',
 		'NarpApp.controllers.myFriends',
 		'NarpApp.controllers.guestBook',
+		'NarpApp.controllers.gdrive',
 		//Extras
 		'ui.bootstrap',
 		'LocalStorageModule',
-		'ngRoute'
+		'ngRoute',
+		'gDriveApp'
 		]);
 
 	app.config([
@@ -77,6 +79,10 @@
 		$routeProvider.when('/guestBook', {
 			templateUrl : 'partials/guestBook.html',
 			controller : 'GuestBookCtrl'
+		});
+		$routeProvider.when('/gdrive', {
+			templateUrl : 'partials/services/gdrive.html',
+			controller : 'GdriveCtrl'
 		});
 		
 		return $routeProvider.otherwise({
