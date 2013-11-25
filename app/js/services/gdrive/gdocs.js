@@ -42,7 +42,7 @@ function GDocs(selector) {
 };
 
 GDocs.prototype.auth = function(interactive, opt_callback) {
-	//try {
+	try {
 		chrome.identity.getAuthToken({
 			interactive : interactive
 		}, function(token) {
@@ -51,9 +51,9 @@ GDocs.prototype.auth = function(interactive, opt_callback) {
 				opt_callback && opt_callback();
 			}
 		}.bind(this));
-	//} catch (e) {
-	//	console.log(e);
-	//}
+	} catch (e) {
+		console.log(e);
+	}
 };
 
 GDocs.prototype.removeCachedAuthToken = function(opt_callback) {
