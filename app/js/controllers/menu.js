@@ -18,8 +18,8 @@
 			name : 'Guess Book',
 			url : '#/guestBook'
 		}, {
-			name : 'Something else here',
-			url : '#'
+			name : 'GDrive Files',
+			url : '#/gdrive'
 		} ];
 
 		$scope.signinCallback = function(authResult) {
@@ -29,10 +29,10 @@
 				// Hide the sign-in button now that the user is
 				// authorized, for example:
 				steam.saveUserLocal(authResult);
-				//$rootScope.$digest();
+				$scope.$apply();
 
 			} else if (authResult['error']) {
-				console.log('Sign-in state: ' + authResult['error']);
+				console.log('Sign-in state for error field: ' + authResult['error']);
 				// Update the app to reflect a signed out user
 				// Possible error values:
 				// "user_signed_out" - User is signed-out
@@ -40,29 +40,28 @@
 				// "immediate_failed" - Could not automatically log in
 				// the user
 				steam.removeUserLocal();
-				//$rootScope.$digest();
+				//$scope.$apply();
 
 			}
 		};
 
-//		$scope.isLogged = false;
 		$scope.isLogged = function(){
 			var user = steam.isUserLooged();
-			console.log('User on local storage: ',user);
+			//console.log('User on local storage: ',user);
 			return user;
 		}
 
 		$scope.login = function(){
 			loginService.open();
-			steam.saveUserLocal(authResult);
-			//$rootScope.$digest();
+			steam.saveUserLocal('We need to fill this is a similar information has it would be from google');
+			$scope.$apply();
 		}
 
 		$scope.logout = function(){
 			console.log('lets logout the user.');
 			gapi.auth.signOut();
 			steam.removeUserLocal();
-			//$rootScope.$digest();
+			//$scope.$apply();
 		}
 
 	} ]);
