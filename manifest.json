@@ -6,7 +6,9 @@
 	"oauth2": {
 		"client_id": "588439795012-aqjab2qffma45q6tgen55pgjtslqlm1k.apps.googleusercontent.com",
 		"scopes": [
-			"https://www.googleapis.com/auth/drive/drive.file",
+			'https://www.googleapis.com/auth/drive.install'
+			'https://www.googleapis.com/auth/drive.file'
+			'https://www.googleapis.com/auth/userinfo.profile'
 			'https://www.googleapis.com/auth/userinfo.email'
 			]
 	},
