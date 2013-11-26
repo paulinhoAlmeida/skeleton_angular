@@ -45,14 +45,14 @@
 			// Set the API key
 			gapi.client.setApiKey('AIzaSyDmVIr52hvWF89KP3WFqjdC6lwBMP5Qk8A');
 			// Set: name of service, version and callback function
-			gapi.client.load('beerendpoint API', 'v1', getBeers);
+			gapi.client.load('beerendpoint', 'v1', getBeers);
 		}
 		//The callback function that will be called after our Birra service was loaded. In this case we fetch a list of beers (top 20 beers) andshow them to the user.
 
 		function getBeers() {
 			var client = gapi.client;
 			console.log('client.API: ',client);
-			var req = client.birra.listBeer();
+			var req = client.beerendpoint.listBeer();
 			console.log('getBeers: ', req);
 		}
 
