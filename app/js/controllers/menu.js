@@ -53,8 +53,8 @@
 
 		$scope.login = function(){
 			loginService.open();
-			steam.saveUserLocal('We need to fill this is a similar information has it would be from google');
-			$scope.$apply();
+			//steam.saveUserLocal('We need to fill this is a similar information has it would be from google');
+			//$scope.$apply();
 		}
 
 		$scope.logout = function(){

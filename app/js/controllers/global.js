@@ -30,8 +30,8 @@
 
 	app = angular.module('NarpApp.controllers.global', []);
 
-	app.controller('AppCtrl', ['$scope', '$location', 'steam',
-	function($scope, loc, steam) {
+	app.controller('AppCtrl', ['$scope', '$location',
+	function($scope, loc) {
 		//TODO define security were
 		
 	}]);

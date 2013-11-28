@@ -1,15 +1,41 @@
 <div class="modal-body">
+	<form class="form-signin" data-ng-show="loginScreen()">
 
-		<form class="form-signin">
-			<h2 class="form-signin-heading">Please sign in</h2>
-			<input type="text" class="input-block-level" placeholder="Email address">
-			<input type="password" class="input-block-level" placeholder="Password">
-			<label class="checkbox">
-				<input type="checkbox" value="remember-me">
-				Remember me </label>
-			<button class="btn btn-primary" type="submit">
-				Sign in
-				<i class="icon-circle-arrow-right"></i>
-			</button>
-		</form>
+		<h2 class="form-signin-heading">Please sign in</h2>
+		<input type="text" class="input-block-level" placeholder="Email address">
+		<input type="password" class="input-block-level" placeholder="Password">
+		<label class="checkbox">
+			<input type="checkbox" value="remember-me">
+			Remember me </label>
+		<button class="btn btn-primary" ng-click="ok()">
+			Sign in
+			<i class="icon-circle-arrow-right"></i>
+		</button>
+		<button class="btn btn-success" ng-click="register()">
+			register
+		</button>
+
+		<button class="btn btn-danger" ng-click="close()">
+			Cancel
+			<i class="icon-circle-arrow-right"></i>
+		</button>
+	</form>
+
+	<form class="form-signin" data-ng-hide="loginScreen()">
+
+		<h2 class="form-signin-heading">Please register</h2>
+		<input type="text" class="input-block-level" placeholder="Email address" ng-model="userReg">
+		<input type="password" class="input-block-level" placeholder="Password" ng-model="passwordReg">
+		<input type="password" class="input-block-level" placeholder="Repetead password">
+		
+		<button class="btn btn-primary" ng-click="registerOk()">
+			Register
+			<i class="icon-circle-arrow-right"></i>
+		</button>
+		
+		<button class="btn btn-danger" ng-click="closeRegister()">
+			Cancel
+			<i class="icon-circle-arrow-right"></i>
+		</button>
+	</form>
 </div>
