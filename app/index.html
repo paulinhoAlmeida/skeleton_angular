@@ -21,6 +21,8 @@
 		<![endif]-->
 	</head>
 	<body ng-controller="AppCtrl">
+		<div ng-include="'partials/global_loading.html'" ng-hide="libsloaded()">
+		</div>
 		<div ng-include="'partials/menu.html'" class="header"></div>
 		<section>
 			<div ng-view class="main"></div>
@@ -40,7 +42,7 @@
 			$scope.signinCallback(data);
 		}
 		//The callback that will be called after Google API JS library was loaded. 
-		//In our case, we wish to set the API key and load our amazing beer service:.
+		//In our case, we wish to set the API key and load our amazing User Endpoints service:.
 		function loadGapi() {
 			// Set the API key
 			gapi.client.setApiKey('AIzaSyDmVIr52hvWF89KP3WFqjdC6lwBMP5Qk8A');
@@ -48,11 +50,12 @@
 			gapi.client.load('userendpoint', 'v1', apiLoaded);
 
 		}
-		//The callback function that will be called after our Birra service was loaded. In this case we fetch a list of beers (top 20 beers) andshow them to the user.
 
 		function apiLoaded() {
-			var client = gapi.client;
-			console.log('client.API: ',client);
+			console.log('Libs loaded...');
+			var ele = $('[ng-controller="AppCtrl"]')[0];
+			var $scope = angular.element(ele).scope();
+			$scope.setLibLoaded();
 		}
 
 	</script>
@@ -66,30 +69,26 @@
 	</script>
 		<!-- Jquery JavaScripts -->
 		<script src="lib/jquery/jquery-1.10.2.min.js"></script>
-		
-		<!-- Google drive js-->
-		<script src="js/services/gdrive/util.js"></script>
-		<script src="js/services/gdrive/dnd.js"></script>
-		<script src="js/services/gdrive/upload.js"></script>
-		<script src="js/services/gdrive/gdocs.js"></script>
-		
-		
 		<!-- Other JavaScripts -->
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/angular/angular-route.js"></script>
-		
-		<!-- Google drive factory js-->
-		<script src="js/services/gdrive/app.js"></script>
-		
 		<script src="lib/bootplus/bootstrap.min.js"></script>
 		<script src="lib/angular/ui-bootstrap-tpls-0.6.0.min.js"></script>
 		<script src="lib/angular/localStorageModule.js"></script>
+		
 		<!-- Main js for router -->
 		<script src="js/app.js"></script>
 		<!-- Services -->
 		<script src="js/services/backend.js"></script>
 		<script src="js/services/modal_fullpage.js"></script>
 		<script src="js/services/login.js"></script>
+		<!-- Google drive js-->
+		<script src="js/services/gdrive/util.js"></script>
+		<script src="js/services/gdrive/dnd.js"></script>
+		<script src="js/services/gdrive/upload.js"></script>
+		<script src="js/services/gdrive/gdocs.js"></script>
+		<!-- Google drive factory js-->
+		<script src="js/services/gdrive/app.js"></script>
 		<!-- Filters -->
 		<script src="js/filters/interpolate.js"></script>
 		<!-- Directives -->
@@ -106,13 +105,20 @@
 		<script src="js/controllers/myFriends.js"></script>
 		<script src="js/controllers/guestBook.js"></script>
 		<script src="js/controllers/gdrive.js"></script>
+
+		<!-- Plugin for the loading in initial page -->
+		<script src="js/plugins/plugin_canvas_loading.js"></script>
+
 		<!-- Place this asynchronous JavaScript just before your </body> tag -->
-	    <script type="text/javascript">
-	      (function() {
-	       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-	       po.src = 'https://apis.google.com/js/client:plusone.js';
-	       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	     })();
-	    </script>
+		<script type="text/javascript">
+	        (function() {
+	            var po = document.createElement('script');
+	            po.type = 'text/javascript';
+	            po.async = true;
+	            po.src = 'https://apis.google.com/js/client:plusone.js';
+	            var s = document.getElementsByTagName('script')[0];
+	            s.parentNode.insertBefore(po, s);
+	        })();
+		</script>
 	</body>
 </html>

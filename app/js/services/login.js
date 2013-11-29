@@ -17,8 +17,6 @@
 			});
 		};
 		var ModalInstanceCtrl = function($scope, $modalInstance) {
-			$scope.user = '';
-			$scope.password = '';
 			
 			$scope.loginScreenOn = true;
 			//var to show the login screen or register
@@ -27,7 +25,19 @@
 			};
 			//Login buttons
 			$scope.ok = function() {
-				$modalInstance.close();
+				var passToUse = this.password;
+				gapi.client.userendpoint.getUser({'id':this.user}).execute(function(data){
+					console.log('data from get User: ',data);
+					if(data.password == passToUse){
+						steam.saveUserLocal(data);
+						$scope.$apply();
+						$modalInstance.dismiss('cancel');
+					}else{
+						
+					}
+					
+				});
+				//$modalInstance.close();
 			};
 			$scope.close = function() {
 				$modalInstance.dismiss('cancel');
