@@ -36,6 +36,9 @@
 							</li>
 						</ul>
 					</li>
+					<li ng-class="getClass('/myacount')" data-ng-show="isLogged()">
+						<a href="#/myacount">My Acount</a>
+					</li>
 				</ul>
 				<div class="navbar-form pull-right" data-ng-show="isLogged()">
 					<button type="submit" class="btn btn-danger" data-ng-click="logout()">

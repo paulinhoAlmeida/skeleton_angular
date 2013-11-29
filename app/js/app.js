@@ -50,6 +50,7 @@
 		'NarpApp.controllers.myFriends',
 		'NarpApp.controllers.guestBook',
 		'NarpApp.controllers.gdrive',
+		'NarpApp.controllers.myAcount',
 		//Extras
 		'ui.bootstrap',
 		'LocalStorageModule',
@@ -58,9 +59,9 @@
 		]);
 
 	app.config([
-        '$routeProvider', function($routeProvider) {
+	'$routeProvider', function($routeProvider) {
 
-        $routeProvider.when('/home', {
+		$routeProvider.when('/home', {
 			templateUrl : 'partials/home.html',
 			controller : 'HomeCtrl'
 		});
@@ -83,6 +84,10 @@
 		$routeProvider.when('/gdrive', {
 			templateUrl : 'partials/services/gdrive.html',
 			controller : 'GdriveCtrl'
+		});
+		$routeProvider.when('/myacount', {
+			templateUrl : 'partials/myAcount.html',
+			controller : 'MyAcountCtrl'
 		});
 		
 		return $routeProvider.otherwise({

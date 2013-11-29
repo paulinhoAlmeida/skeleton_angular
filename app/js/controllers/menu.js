@@ -39,7 +39,7 @@
 				// "access_denied" - User denied access to your app
 				// "immediate_failed" - Could not automatically log in
 				// the user
-				steam.removeUserLocal();
+				//steam.removeUserLocal();
 				//$scope.$apply();
 
 			}
