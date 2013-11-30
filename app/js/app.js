@@ -41,6 +41,7 @@
 		'NarpApp.directives.draggable',
 		'NarpApp.directives.droppable',
 		'NarpApp.directives.lazy-loading-img',
+		'NarpApp.directives.twitterFeeds',
 		//Controllers
 		'NarpApp.controllers.global',
 		'NarpApp.controllers.menu',
@@ -51,6 +52,8 @@
 		'NarpApp.controllers.guestBook',
 		'NarpApp.controllers.gdrive',
 		'NarpApp.controllers.myAcount',
+		//Plugins
+		
 		//Extras
 		'ui.bootstrap',
 		'LocalStorageModule',
