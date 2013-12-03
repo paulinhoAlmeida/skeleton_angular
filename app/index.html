@@ -47,10 +47,10 @@
 		//In our case, we wish to set the API key and load our amazing User Endpoints service:.
 		function loadGapi() {
 			// Set the API key
-			gapi.client.setApiKey('AIzaSyDmVIr52hvWF89KP3WFqjdC6lwBMP5Qk8A');
+			//gapi.client.setApiKey('AIzaSyDK6qsnvT8NL1kakgtOlWGvItsvFogBzhc');
 			// Set: name of service, version and callback function
-			gapi.client.load('userendpoint', 'v1', apiLoaded);
-
+			//gapi.client.load('userendpoint', 'v1', apiLoaded, "https://narpbackend.appspot.com/_ah/api");
+			gapi.client.load('userendpoint', 'v1', apiLoaded, "http://localhost:8080/_ah/api");
 		}
 
 		function apiLoaded() {
@@ -58,17 +58,17 @@
 			var ele = $('[ng-controller="AppCtrl"]')[0];
 			var $scope = angular.element(ele).scope();
 			$scope.setLibLoaded();
-		}
+			gapi.client.userendpoint.listUser().execute(function(data){
+				console.log('List Response: ', data);
+			});
+		};
 
 	</script>
-	<script src="https://apis.google.com/js/client.js?onload=loadGapi">
-		{ "client": {},
-			"googleapis.config": {
-				root:"http://localhost:8080/_ah/api",
-				//root:"454651675851.apps.googleusercontent.com/_ah/api"
-			}
-		}
-	</script>
+	<!--
+	<script src="https://apis.google.com/js/client.js?onload=init"></script>
+	-->
+	<script src="https://apis.google.com/js/client.js?onload=loadGapi"></script>
+	
 		<!-- Jquery JavaScripts -->
 		<script src="lib/jquery/jquery-1.10.2.min.js"></script>
 		<!-- Other JavaScripts -->
