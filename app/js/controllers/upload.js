@@ -6,7 +6,7 @@
 		// create a uploader with options
 		var uploader = $scope.uploader = $fileUploader.create({
 			scope : $scope, // to automatically update the html. Default: $rootScope
-			url : '/php/upload.php',
+			url : '/',
 			formData : [{
 				key : 'value'
 			}],

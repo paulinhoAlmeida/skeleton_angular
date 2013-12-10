@@ -10,7 +10,7 @@ app.factory('$fileUploader', [ '$compile', '$rootScope', '$http', '$window', fun
     function Uploader(params) {
         angular.extend(this, {
             scope: $rootScope,
-            url: '/php/upload.php',
+            url: '/',
             alias: 'file',
             queue: [],
             headers: {},
