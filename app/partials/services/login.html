@@ -21,21 +21,23 @@
 		</button>
 	</form>
 
-	<form class="form-signin" data-ng-hide="loginScreen()">
+	<form name="registerForm" class="form-signin" data-ng-hide="loginScreen()">
+		
 
 		<h2 class="form-signin-heading">Please register</h2>
-		<input type="text" class="input-block-level" placeholder="Email address" ng-model="userReg">
-		<input type="password" class="input-block-level" placeholder="Password" ng-model="passwordReg">
-		<input type="password" class="input-block-level" placeholder="Repetead password">
+		<fieldset>
+		<input type="email" name="email" class="input-block-level" placeholder="Email address" ng-model="userReg" required>
+		<input type="password" class="input-block-level" placeholder="Password" ng-model="passwordReg" required>
+		<input type="password" class="input-block-level" placeholder="Repetead password" ng-model="passwordRegAgain" required>
 		
-		<button class="btn btn-primary" ng-click="registerOk()">
-			Register
-			<i class="icon-circle-arrow-right"></i>
+		
+		<button class="btn btn-primary" ng-click="registerOk()" ng-disabled="!registerForm.$valid">
+			Register<i class="icon-circle-arrow-right"></i>
 		</button>
 		
 		<button class="btn btn-danger" ng-click="closeRegister()">
-			Cancel
-			<i class="icon-circle-arrow-right"></i>
+			Cancel<i class="icon-circle-arrow-right"></i>
 		</button>
+		</fieldset>
 	</form>
 </div>

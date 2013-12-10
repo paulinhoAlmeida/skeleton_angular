@@ -54,6 +54,7 @@ GDocs.prototype.auth = function(interactive, opt_callback) {
 	} catch (e) {
 		console.log(e);
 	}
+	//this.accessToken = "ya29.1.AADtN_Xf0xNCX5YzBZRG91Qccb9N2VaA7DdyiTEET5cm1Zuqe-4j53jOdToknEWsGLrfeg";
 };
 
 GDocs.prototype.removeCachedAuthToken = function(opt_callback) {

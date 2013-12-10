@@ -81,6 +81,10 @@
 				});
 			}
 		};
+		
+//		gdocs.auth(true, function() {
+//			$scope.fetchDocs(false);
+//		});
 
 		// Toggles the authorization state.
 		$scope.toggleAuth = function(interactive) {
@@ -104,7 +108,13 @@
 				return 'Authorize';
 		};
 
-		$scope.toggleAuth(false);
+		
+
+//		//fetching json throw Yahoo service not really sure if is the best option since is just html wrappper.
+//		var urlToFetchMainFolder = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22https%3A%2F%2Fgoogledrive.com%2Fhost%2F0B2YSgad5pD5QUkJoUkFWSWRnU0k%2F%22%20and%20xpath%3D'%2F%2Fdiv%5B%40class%3D%22folder-cell%22%5D%2Fa'&format=json&diagnostics=true&callback=";
+//		$http.get(urlToFetchMainFolder, function(data){
+//			console.log('DATA: ',data.query.results.a);
+//		}, 'json');
 
 	}]);
 

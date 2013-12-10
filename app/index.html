@@ -51,16 +51,25 @@
 			// Set: name of service, version and callback function
 			//gapi.client.load('userendpoint', 'v1', apiLoaded, "https://narpbackend.appspot.com/_ah/api");
 			gapi.client.load('userendpoint', 'v1', apiLoaded, "http://localhost:8080/_ah/api");
+			//gapi.client.load('oauth2', 'v2', apiLoaded);
+			//gapi.client.load('drive', 'v2', apiLoaded);
+			//gapi.client.load('identitytoolkit', 'v3', apiLoaded);
 		}
 
+		var numberOfLib = 1;
 		function apiLoaded() {
-			console.log('Libs loaded...');
-			var ele = $('[ng-controller="AppCtrl"]')[0];
-			var $scope = angular.element(ele).scope();
-			$scope.setLibLoaded();
-			gapi.client.userendpoint.listUser().execute(function(data){
-				console.log('List Response: ', data);
-			});
+			console.log('Lib loaded......');
+			if(--numberOfLib == 0){
+				console.log('All libs loaded...');
+				var ele = $('[ng-controller="AppCtrl"]')[0];
+				var $scope = angular.element(ele).scope();
+				$scope.setLibLoaded();
+				
+				// example that is working
+				gapi.client.userendpoint.listUser().execute(function(data){
+					console.log('List Response: ', data);
+				});
+			}
 		};
 
 	</script>
@@ -71,6 +80,13 @@
 	
 		<!-- Jquery JavaScripts -->
 		<script src="lib/jquery/jquery-1.10.2.min.js"></script>
+		
+		<!-- Google drive js-->
+		<script src="js/services/gdrive/util.js"></script>
+		<script src="js/services/gdrive/dnd.js"></script>
+		<script src="js/services/gdrive/upload.js"></script>
+		<script src="js/services/gdrive/gdocs.js"></script>
+		
 		<!-- Other JavaScripts -->
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/angular/angular-route.js"></script>
@@ -79,19 +95,20 @@
 		<script src="lib/angular/localStorageModule.js"></script>
 		<script src="lib/underscore.js"></script>
 		
+		
+		
 		<!-- Main js for router -->
 		<script src="js/app.js"></script>
 		<!-- Services -->
 		<script src="js/services/backend.js"></script>
 		<script src="js/services/modal_fullpage.js"></script>
 		<script src="js/services/login.js"></script>
-		<!-- Google drive js-->
-		<script src="js/services/gdrive/util.js"></script>
-		<script src="js/services/gdrive/dnd.js"></script>
-		<script src="js/services/gdrive/upload.js"></script>
-		<script src="js/services/gdrive/gdocs.js"></script>
+		
 		<!-- Google drive factory js-->
 		<script src="js/services/gdrive/app.js"></script>
+		<!-- File Upload factory js-->
+		<script src="js/services/$fileUploader.js"></script>
+		
 		<!-- Filters -->
 		<script src="js/filters/interpolate.js"></script>
 		<!-- Directives -->
@@ -100,6 +117,10 @@
 		<script src="js/directives/version.js"></script>
 		<script src="js/directives/lazy-loading-img.js"></script>
 		<script src="js/directives/twitterFeeds.js"></script>
+		<!-- File Upload directives js-->
+		<script src="js/directives/ngFileDrop.js"></script>
+		<script src="js/directives/ngFileOver.js"></script>
+		<script src="js/directives/ngFileSelect.js"></script>
 		<!-- Controllers -->
 		<script src="js/controllers/global.js"></script>
 		<script src="js/controllers/menu.js"></script>
@@ -110,9 +131,11 @@
 		<script src="js/controllers/guestBook.js"></script>
 		<script src="js/controllers/gdrive.js"></script>
 		<script src="js/controllers/myAcount.js"></script>
+		<script src="js/controllers/upload.js"></script>
 
 		<!-- Plugin for the loading in initial page -->
 		<script src="js/plugins/plugin_canvas_loading.js"></script>
+		
 
 		<!-- Place this asynchronous JavaScript just before your </body> tag -->
 		<script type="text/javascript">

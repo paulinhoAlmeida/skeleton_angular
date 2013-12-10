@@ -52,6 +52,7 @@
 		'NarpApp.controllers.guestBook',
 		'NarpApp.controllers.gdrive',
 		'NarpApp.controllers.myAcount',
+		'NarpApp.controllers.upload',
 		//Plugins
 		
 		//Extras
@@ -87,6 +88,10 @@
 		$routeProvider.when('/gdrive', {
 			templateUrl : 'partials/services/gdrive.html',
 			controller : 'GdriveCtrl'
+		});
+		$routeProvider.when('/upload', {
+			templateUrl : 'partials/upload.html',
+			controller : 'UploadCtrl'
 		});
 		$routeProvider.when('/myacount', {
 			templateUrl : 'partials/myAcount.html',
